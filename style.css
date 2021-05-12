@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #003b12;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transition: all .5s;
+  transform-style: preserve-3d;
+  transform: scale(1);
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  background: #00af83;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+  border-radius: 10px;
+}
+
+.btn-repeat {
+  display: none;
+  flex-direction: column-reverse;
+  background: wheat;
+  width: 200px;
+  height: 100px;
+  padding: 16px 31px;
+  font-size: 25px;
+  color: red;
+}
+.display-on {
+  display: block;
+}
+
+.timer{
+  display: flex;
+  font-size: 65px;
+  color: wheat;
+}
+.time-message{
+  margin-top: 50px;
+  display: flex;
+  font-size: 32px;
+  color: wheat;
+}
+.section-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameover-message{
+  display: none;
+  font-size: 32px;
+  width: 240px;
+  text-align: center;
+  color: red;
+}
+
+.victory-message{
+  display: none;
+  font-size: 32px;
+  width: 240px;
+  text-align: center;
+  color: red;
+}
+.display-block{
+  display: block;
+}
